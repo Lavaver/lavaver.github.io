@@ -123,32 +123,25 @@
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <h1 id="堆栈日志提供的错误信息"><a href="#堆栈日志提供的错误信息" class="headerlink" title="堆栈日志提供的错误信息"></a>堆栈日志提供的错误信息</h1><script>
 document.addEventListener("DOMContentLoaded", function() {
-  // 获取控制台错误信息
-  var consoleErrors = getConsoleErrors();
+  // 创建用于显示控制台错误信息的列表
+  var errorList = document.createElement("ul");
+  errorList.id = "error-list";
+  document.body.appendChild(errorList);
 
-  // 将错误信息显示在页面上
-  var consoleErrorsElement = document.getElementById("console-errors");
-  consoleErrors.forEach(function(error, index) {
-    var errorItem = document.createElement("div");
-    errorItem.textContent = "Error " + (index + 1) + ": " + error;
-    consoleErrorsElement.appendChild(errorItem);
-  });
+  // 监听全局错误事件
+  window.onerror = function(message, source, lineno, colno, error) {
+    // 构造错误信息字符串
+    var errorMessage = message + " at " + source + ":" + lineno;
+    // 创建列表项并添加到错误列表中
+    var errorItem = document.createElement("li");
+    errorItem.textContent = errorMessage;
+    errorList.appendChild(errorItem);
+    
+    // 阻止默认行为和事件传播
+    return false;
+  };
 });
-
-function getConsoleErrors() {
-  var consoleErrors = [];
-  if (window.console && window.console.error) {
-    var consoleError = console.error;
-    console.error = function(message) {
-      consoleErrors.push(message);
-      consoleError.apply(console, arguments);
-    };
-  }
-  return consoleErrors;
-}
 </script>
-
-<div id="console-errors"></div>
 
 <h1 id="请按此处返回首页"><a href="#请按此处返回首页" class="headerlink" title="请按此处返回首页"></a><a href="/">请按此处返回首页</a></h1>
       </section>
