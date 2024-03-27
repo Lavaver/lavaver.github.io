@@ -22,7 +22,7 @@
 
   
 
-  <title>这里啥都木得 | 洛子猫猫的小博客</title>
+  <title>404 页面不存在 | 洛子猫猫的小博客</title>
 
   
 
@@ -78,10 +78,6 @@
         
           <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://space.bilibili.com/544229833">个人 B 站</a></li>
         
-          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://Laubcdd.github.io">好基友的屑网站</a></li>
-        
-          <li class="navbar-list-item"><a href="/maimai">出勤表</a></li>
-        
           <li class="navbar-list-item"><a href="/about">关于</a></li>
         
       </ul>
@@ -108,7 +104,7 @@
   
     <div class="header-content">
       <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">这里啥都木得</h1>
+        <h1 class="title-wrap">404 页面不存在</h1>
         
       </div>
     </div>
@@ -125,30 +121,36 @@
     <div class="article-info">
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="为什么看到了这个页面"><a href="#为什么看到了这个页面" class="headerlink" title="为什么看到了这个页面"></a>为什么看到了这个页面</h1><p>你在网址栏输入了在这个小小宇宙间根本不存在的内容</p>
-<p>当你出现笔误或资源被删除后再次访问就会被重定向到此页面</p>
-<h2 id="可能的问题"><a href="#可能的问题" class="headerlink" title="可能的问题"></a>可能的问题</h2><ul>
-<li>资源被删除</li>
-</ul>
-<blockquote>
-<p>一般来说，在资源删除之前会提前在博文或全局消息中提示有需要者在指定期限前下载或访问</p>
-</blockquote>
-<ul>
-<li><p>笔误</p>
-</li>
-<li><p>压根不存在某些内容</p>
-</li>
-</ul>
-<h2 id="如何修正问题"><a href="#如何修正问题" class="headerlink" title="如何修正问题"></a>如何修正问题</h2><ul>
-<li><p>在资源删除之前下载或访问它</p>
-</li>
-<li><p>修正笔误</p>
-</li>
-<li><p>某些内容压根不存在你就放心吧（）</p>
-</li>
-</ul>
-<h2 id="传送门"><a href="#传送门" class="headerlink" title="传送门"></a>传送门</h2><p><a href="/">回到主页</a></p>
+        <h1 id="堆栈日志提供的错误信息"><a href="#堆栈日志提供的错误信息" class="headerlink" title="堆栈日志提供的错误信息"></a>堆栈日志提供的错误信息</h1><script>
+document.addEventListener("DOMContentLoaded", function() {
+  // 获取控制台错误信息
+  var consoleErrors = getConsoleErrors();
 
+  // 将错误信息显示在页面上
+  var consoleErrorsElement = document.getElementById("console-errors");
+  consoleErrors.forEach(function(error, index) {
+    var errorItem = document.createElement("div");
+    errorItem.textContent = "Error " + (index + 1) + ": " + error;
+    consoleErrorsElement.appendChild(errorItem);
+  });
+});
+
+function getConsoleErrors() {
+  var consoleErrors = [];
+  if (window.console && window.console.error) {
+    var consoleError = console.error;
+    console.error = function(message) {
+      consoleErrors.push(message);
+      consoleError.apply(console, arguments);
+    };
+  }
+  return consoleErrors;
+}
+</script>
+
+<div id="console-errors"></div>
+
+<h1 id="请按此处返回首页"><a href="#请按此处返回首页" class="headerlink" title="请按此处返回首页"></a><a href="/">请按此处返回首页</a></h1>
       </section>
 
       
@@ -244,20 +246,35 @@
       <a href="javascript:;" id="theme-dark">🌛 深色</a>
     </p>
 
-    <div class="text" id="randomText">🔘 点击这里查看一些奇♂妙的留言或梗（？</div>
+    <div class="text" id="randomText">🔘 点击这里查看一些奇♂妙的留言或梗（有概率触发某些好事...？）</div>
 
   </div>
 </footer>
 
 <script>
-  const textArray = ['早餐吃得好，面包配咖啡！', '毒 牛 奶 会 害 人', '我 有 抑 郁 症', '我来机厅打白潘纯粹就是我好这口（）', '跟本站长一起说：咕咕咕！', '你说我做这个博客 90% 的精力都花在了什么地方？当然是无限的在 /layout/_partial/footer.ejs 里魔改主题代码呀（）', '世界上最遥远的距离：写博文、改代码和 Deploy（悲）', 'Tips：你知道吗？本站长每日都要消耗几十盒浓缩咖啡液，是的...几十盒...', '原来 Localhost 叫 loaclhost （懂了，127.0.0.1 原来叫 1.0.0.127）', 'Tips：西安地铁的西户线是全国唯一一个用内燃机车运行的线路', '我最希望的就是去当外卖员，这样就能天天给人超时（）', 'Tips：什么都吃只会害了你啊啊啊啊啊啊啊（怒）', 'U&iVERSE！'];
+  const textArray = ['早餐吃得好，面包配咖啡！', '毒 牛 奶 会 害 人', '我 有 抑 郁 症', '我来机厅打白潘纯粹就是我好这口（）', '跟本站长一起说：咕咕咕！', '你说我做这个博客 90% 的精力都花在了什么地方？当然是无限的在 /layout/_partial/footer.ejs 里魔改主题代码呀（）', '世界上最遥远的距离：写博文、改代码和 Deploy（悲）', 'Tips：你知道吗？本站长每日都要消耗几十盒浓缩咖啡液，是的...几十盒...', '原来 Localhost 叫 loaclhost （懂了，127.0.0.1 原来叫 1.0.0.127）', 'Tips：西安地铁的西户线是全国唯一一个用内燃机车运行的线路', '我最希望的就是去当外卖员，这样就能天天给人超时（）', 'Tips：什么都吃只会害了你啊啊啊啊啊啊啊（怒）', 'U&iVERSE！','Minecraft我的爱'];
 
   const randomText = document.getElementById('randomText');
 
+  let countdownTimer;
+
   randomText.addEventListener('click', function() {
       const newText = textArray[Math.floor(Math.random() * textArray.length)];
-      randomText.innerHTML = `<span class="typing">${newText}</span>`;
+      if (Math.random() < 0.01) {
+          alert('⚠️ 概率性事件被激活了！5 秒后将触发事件！')
+          countdownTimer = setTimeout(() => {
+              openLink();
+          }, 5000); // 5秒后触发操作
+      } else {
+          randomText.innerHTML = `<span class="typing">${newText}</span>`;
+      }
   });
+
+  function openLink() {
+      randomText.innerHTML = 'Minecraft，启动！';
+      const url = 'minecraft://'; // 替换成你要打开的链接
+      window.location.href = url;
+  }
 </script>
   </div>
 

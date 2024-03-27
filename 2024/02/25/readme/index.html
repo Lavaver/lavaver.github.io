@@ -78,10 +78,6 @@
         
           <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://space.bilibili.com/544229833">个人 B 站</a></li>
         
-          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://Laubcdd.github.io">好基友的屑网站</a></li>
-        
-          <li class="navbar-list-item"><a href="/maimai">出勤表</a></li>
-        
           <li class="navbar-list-item"><a href="/about">关于</a></li>
         
       </ul>
@@ -279,20 +275,35 @@
       <a href="javascript:;" id="theme-dark">🌛 深色</a>
     </p>
 
-    <div class="text" id="randomText">🔘 点击这里查看一些奇♂妙的留言或梗（？</div>
+    <div class="text" id="randomText">🔘 点击这里查看一些奇♂妙的留言或梗（有概率触发某些好事...？）</div>
 
   </div>
 </footer>
 
 <script>
-  const textArray = ['早餐吃得好，面包配咖啡！', '毒 牛 奶 会 害 人', '我 有 抑 郁 症', '我来机厅打白潘纯粹就是我好这口（）', '跟本站长一起说：咕咕咕！', '你说我做这个博客 90% 的精力都花在了什么地方？当然是无限的在 /layout/_partial/footer.ejs 里魔改主题代码呀（）', '世界上最遥远的距离：写博文、改代码和 Deploy（悲）', 'Tips：你知道吗？本站长每日都要消耗几十盒浓缩咖啡液，是的...几十盒...', '原来 Localhost 叫 loaclhost （懂了，127.0.0.1 原来叫 1.0.0.127）', 'Tips：西安地铁的西户线是全国唯一一个用内燃机车运行的线路', '我最希望的就是去当外卖员，这样就能天天给人超时（）', 'Tips：什么都吃只会害了你啊啊啊啊啊啊啊（怒）', 'U&iVERSE！'];
+  const textArray = ['早餐吃得好，面包配咖啡！', '毒 牛 奶 会 害 人', '我 有 抑 郁 症', '我来机厅打白潘纯粹就是我好这口（）', '跟本站长一起说：咕咕咕！', '你说我做这个博客 90% 的精力都花在了什么地方？当然是无限的在 /layout/_partial/footer.ejs 里魔改主题代码呀（）', '世界上最遥远的距离：写博文、改代码和 Deploy（悲）', 'Tips：你知道吗？本站长每日都要消耗几十盒浓缩咖啡液，是的...几十盒...', '原来 Localhost 叫 loaclhost （懂了，127.0.0.1 原来叫 1.0.0.127）', 'Tips：西安地铁的西户线是全国唯一一个用内燃机车运行的线路', '我最希望的就是去当外卖员，这样就能天天给人超时（）', 'Tips：什么都吃只会害了你啊啊啊啊啊啊啊（怒）', 'U&iVERSE！','Minecraft我的爱'];
 
   const randomText = document.getElementById('randomText');
 
+  let countdownTimer;
+
   randomText.addEventListener('click', function() {
       const newText = textArray[Math.floor(Math.random() * textArray.length)];
-      randomText.innerHTML = `<span class="typing">${newText}</span>`;
+      if (Math.random() < 0.01) {
+          alert('⚠️ 概率性事件被激活了！5 秒后将触发事件！')
+          countdownTimer = setTimeout(() => {
+              openLink();
+          }, 5000); // 5秒后触发操作
+      } else {
+          randomText.innerHTML = `<span class="typing">${newText}</span>`;
+      }
   });
+
+  function openLink() {
+      randomText.innerHTML = 'Minecraft，启动！';
+      const url = 'minecraft://'; // 替换成你要打开的链接
+      window.location.href = url;
+  }
 </script>
   </div>
 
