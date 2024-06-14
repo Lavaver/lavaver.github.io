@@ -40,118 +40,117 @@
 <body class="loading">
     <span id="config-title" style="display:none">醒梦のIPA 下载站</span>
     <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="//" title="首页" target="_blank" rel="noopener">首页</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Minecraft/" title="Minecraft 分区" target="_blank" rel="noopener">Minecraft 分区</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Non-Prison/" title="免越狱分区" target="_blank" rel="noopener">免越狱分区</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Sponsor/" title="赞助" target="_blank" rel="noopener">赞助</a>
-        </li>
-        
-    </ul>
-	<span class="target"></span>
-	<center>
-	<div class="hitokoto">
-		<span class="typed" id="hitokoto" data-st="true"></span>
-	</div>
-	</center>
-	
-	<p class="footerlinks">
-		<a href="#" class="iconfont icon-null"></a>
-		
-            <a href="/" title="facebook" class="iconfont icon-facebook" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="twitter" class="iconfont icon-twitter" target="_blank" rel="noopener"> </a>
-        
-            <a href="https://github.com/Lavaver/lavaver.github.io" title="github" class="iconfont icon-github" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="wechat" class="iconfont icon-wechat" target="_blank" rel="noopener"> </a>
-        
-            <a href="/" title="email" class="iconfont icon-email" target="_blank" rel="noopener"> </a>
-        
-		<a href="#" class="iconfont icon-null"></a>
-	</p>
-	
-    <p id="copyright">
-        &copy; 2024 zhuye.
-        <span> | </span>Powered by <a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        <span> | </span>Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a> by Fechin
-		
-    </p>
-</div>
-
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/XIPA_COVER.png" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
+    <div id="single" class="page">
+    <div id="top">
+        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
     </div>
-    <div id="vibrant">
-        <svg viewbox="0 0 2880 1620" height="100%" preserveaspectratio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
-        <div>
-            <a class="image-logo" href="/"></a>
-			
-            <div class="iconfont icon-menu switchmenu"></div>
-        </div>
-    </div>
-    
-    <div id="post0">
-        <p>六月 13, 2024</p>
-        <h2><a href="/2024/06/13/Welcome/" title="醒梦のIPA 下载站" class="posttitle">醒梦のIPA 下载站</a></h2>
-        <p class="summary">由醒梦初创，Lavaver（洛子猫Luozicat） 提供支持的高质量 IPA 个人下载服务站
-</p>
-    </div>
-    
-</div>
+    <div class="section">
+        <div class="article">
+            <div class="main">
+                <div class="content">
+                
+                        <style>
+    canvas {
+        display: block;
+        margin: auto;
+        background: #000;
+    }
+</style>
 
-    <div id="primary">
-        
-    </div>
-    
-</div>
-<div id="preview"></div>
+<body>
+    <canvas id="pongCanvas" width="640" height="480"></canvas>
+    <script>
+        const canvas = document.getElementById('pongCanvas');
+        const ctx = canvas.getContext('2d');
 
+        const paddleWidth = 10;
+        const paddleHeight = 60;
+        const ballRadius = 10;
 
-<script>
-    var pressedKeys = ''; // 记录按键顺序的字符串
+        let paddle1Y = (canvas.height - paddleHeight) / 2;
+        let paddle2Y = (canvas.height - paddleHeight) / 2;
+        let ballX = canvas.width / 2;
+        let ballY = canvas.height / 2;
+        let ballXSpeed = 3;
+        let ballYSpeed = 3;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        document.addEventListener('keydown', function(event) {
-            var key = event.key.toLowerCase(); // 获取按下的键并转换为小写
-            pressedKeys += key; // 将按下的键加入字符串
-    
-            // 只保留最近按下的5个键，超过5个时移除最早按下的键
-            if (pressedKeys.length > 4) {
-                pressedKeys = pressedKeys.substring(1);
+        function drawPaddle(x, y) {
+            ctx.fillStyle = '#FFF';
+            ctx.fillRect(x, y, paddleWidth, paddleHeight);
+        }
+
+        function drawBall(x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFF';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function update() {
+            ballX += ballXSpeed;
+            ballY += ballYSpeed;
+
+            if (ballY + ballRadius > canvas.height || ballY - ballRadius < 0) {
+                ballYSpeed = -ballYSpeed;
             }
-    
-            // 判断是否按下了 'pong' 这个组合
-            if (pressedKeys === 'pong') {
-                window.location.href = '/Pong';
+
+            if ((ballX - ballRadius < paddleWidth && ballY > paddle1Y && ballY < paddle1Y + paddleHeight) || 
+                (ballX + ballRadius > canvas.width - paddleWidth && ballY > paddle2Y && ballY < paddle2Y + paddleHeight)) {
+                ballXSpeed = -ballXSpeed;
             }
+
+            if (ballX - ballRadius < 0 || ballX + ballRadius > canvas.width) {
+                ballX = canvas.width / 2;
+                ballY = canvas.height / 2;
+                ballXSpeed = -ballXSpeed;
+            }
+
+            if (keys['w'] && paddle1Y > 0) {
+                paddle1Y -= 5;
+            }
+            if (keys['s'] && paddle1Y < canvas.height - paddleHeight) {
+                paddle1Y += 5;
+            }
+            if (keys['ArrowUp'] && paddle2Y > 0) {
+                paddle2Y -= 5;
+            }
+            if (keys['ArrowDown'] && paddle2Y < canvas.height - paddleHeight) {
+                paddle2Y += 5;
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawPaddle(0, paddle1Y);
+            drawPaddle(canvas.width - paddleWidth, paddle2Y);
+            drawBall(ballX, ballY);
+        }
+
+        function gameLoop() {
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        const keys = {};
+        window.addEventListener('keydown', (e) => {
+            keys[e.key] = true;
         });
-    });
-</script>
+        window.addEventListener('keyup', (e) => {
+            keys[e.key] = false;
+        });
 
- 
+        gameLoop();
+    </script>
+</body>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 
 
