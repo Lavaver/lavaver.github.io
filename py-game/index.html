@@ -49,79 +49,121 @@
             <div class="main">
                 <div class="content">
                 
-                        <h2 id="特别感谢"><a href="#特别感谢" class="headerlink" title="特别感谢"></a>特别感谢</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/544229833">Lavaver</a>（B站名为洛子猫。网站开发，页面设计，<a target="_blank" rel="noopener" href="https://github.com/lavaver">开源软件支持者</a>）</li>
-<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/689610738">醒梦の梦醒</a>（IPA 下载站开拓者，前期支持）</li>
-<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/3546654378559876">二狂狗新号</a>（IPA 资源提供）</li>
-<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1815539429">灵风暗叶</a>（本站灵感来源、初版网站帮助）</li>
-<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1097023537">Cake-007</a>（IPA 资源提供）</li>
-</ul>
-<h2 id="捐款二维码"><a href="#捐款二维码" class="headerlink" title="捐款二维码"></a>捐款二维码</h2><p>本站<strong>不强制任何人捐款</strong>，如果这个网站对你帮助确实非常大，你可以对我们进行捐款。</p>
-<p>捐出去的款将用于支持下载服务的正常运行、未来的域名购买计划和两位爱好者</p>
+                        <head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
 <style>
-.tips-card {
-  position: relative;
-  width: auto;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #ffeb3b; /* 黄色背景 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px auto; /* 居中 */
-}
+    .card {
+      display: flex; /* 使用 flex 布局 */
+      border-radius: 15px;
+      overflow: hidden;
+      width: auto;
+      background-color: #f5f5f5;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      margin: 10px 0; /* 在上方和下方添加 10px 的空隙 */
+    }
+    
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    .image {
+      width: 50%; /* 设置图像宽度为卡片的一半 */
+      object-fit: cover;
+      border-radius: 15px 0 0 15px; /* 左上角和左下角添加圆角 */
+    }
+    
+    .content {
+      padding: 20px;
+    }
+    
+    .title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .subtitle {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #666;
+    }
+    
+    .button {
+      display: inline-block;
+      border-radius: 20px;
+      background-color: #007bff;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    .button:hover {
+      background-color: #0069d9;
+    }
+    
+    .tips-card {
+      position: relative;
+      width: auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffeb3b; /* 黄色背景 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px 10px; /* 居中 */
+    }
+    
+    .tips-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .tips-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .close-btn {
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    
+    .close-btn:hover {
+      color: #666;
+    }
+    
+    .tips-content {
+      font-size: 14px;
+      color: #555;
+    }
+    </style>
 
-.tips-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
+    <div class="tips-card">
+        <div class="tips-header">
+          <span class="tips-title">Tips</span>
+          <span class="close-btn">&times;</span>
+        </div>
+        <div class="tips-content">
+          若不能顺利加载可尝试刷新页面，因为本身框架设计问题导致无缝切换页面时导致 JavaScript 无法顺利载入
+        </div>
+      </div>
 
-.tips-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
+<body>
+    <py-env>
+        - pygame
+    </py-env>
 
-.close-btn {
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.close-btn:hover {
-  color: #666;
-}
-
-.tips-content {
-  font-size: 14px;
-  color: #555;
-}
-
-</style>
-
-<div class="tips-card">
-  <div class="tips-header">
-    <span class="tips-title">⚠ 注意</span>
-  </div>
-  <div class="tips-content">
-    捐款请量力而行，是自愿捐款！自愿捐款！！自愿捐款！！！且未成年人捐款时应先征得家长同意。
-  </div>
-</div>
-
-<div class="tips-card">
-  <div class="tips-header">
-    <span class="tips-title">⚠ 郑重警告</span>
-  </div>
-  <div class="tips-content">
-    捐款完全自愿，我们不强制你捐款，但是如果你在明知道的情况下反过来告我们强制捐款，我们保留法律权利
-  </div>
-</div>
-
-
-<img src="images/Cache_6a40acfe85fdd7f3..jpg" alt="微信">
-<img src="images/1718364627054.jpg" alt="支付宝">
-
+    <py-script src="py-game/plane_war.py"></py-script>
+</body>
                 
                 </div>
             </div>
