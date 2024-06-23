@@ -111,7 +111,7 @@
 .button {
   display: inline-block;
   border-radius: 20px;
-  background-color: #007bff;
+  background-color: green;
   padding: 10px 20px;
   color: white;
   text-decoration: none;
@@ -120,7 +120,13 @@
 }
 
 .button:hover {
-  background-color: #0069d9;
+  background-color: green;
+}
+
+.button.disabled {
+  pointer-events: none;
+  background-color: #ccc; /* 设置为灰色 */
+  color: #666; /* 设置文本颜色为深灰色 */
 }
 
 .tips-card {
@@ -255,6 +261,17 @@
     <h2 class="subtitle">This Minecraft For iOS8.0+</h2>
     <a target="_blank" rel="noopener" href="https://wwp.lanzouq.com/i6cRi21oqq2h" class="button" onclick="playSound()">
       <i class="fas fa-download"></i> 即刻下载
+    </a>
+  </div>
+</div>
+
+<div class="card">
+  <img src="/images/minecraft300x300.png" alt="Placeholder Image" class="image">
+  <div class="content">
+    <h1 class="title">Minecraft 1.10</h1>
+    <h2 class="subtitle"> </h2>
+    <a href="#" class="button disabled">
+      <i class="fas fa-download"></i> 该版本已下架
     </a>
   </div>
 </div>
