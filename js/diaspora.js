@@ -615,7 +615,7 @@ $(function() {
 					  owner: comment.data('o'),
 					  admin: comment.data('a'),
 					  id: decodeURI(window.location.pathname),
-                      proxy: 'http://talkworkers.x-ipa.online/https://github.com/login/oauth/access_token',
+                      proxy: 'https://talkworkers.x-ipa.online/https://github.com/login/oauth/access_token',
 					  distractionFreeMode: comment.data('d')
 					})
 					$(".comment").removeClass("link")
