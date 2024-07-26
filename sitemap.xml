@@ -2,25 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://x-ipa.online/2024/07/26/public-test/</loc>
+    
+    <lastmod>2024-07-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://x-ipa.online/Sponsor/index.html</loc>
-    
-    <lastmod>2024-07-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://x-ipa.online/2024/07/26/history/</loc>
-    
-    <lastmod>2024-07-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://x-ipa.online/2024/07/26/welcome/</loc>
     
     <lastmod>2024-07-26</lastmod>
     
