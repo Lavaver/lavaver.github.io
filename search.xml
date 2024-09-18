@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>【视觉改变公告】X-IPA 新版网站 Cover 设计、网站标题及副标题现已上线！</title>
+    <url>/2024/08/27/genghuan-cover/</url>
+    <content><![CDATA[<p>由于原先的封面图太<em>过于复杂</em>，且图片分辨率并非正常的 1920x1080 ，网站在访问时为了<em>良好视觉体验</em>导致封面图被拉伸，导致观感十分不好。</p>
+<blockquote>
+<p>而且原封面图看着也非常杂，没有体现出简约、活力的感觉，<strong>严重拉大了群友及路人的距离感</strong>（什么乔布斯）</p>
+</blockquote>
+<p>为了迎合全站简约风格及平衡观感，新版的封面图采用简约图形 + 少量图片 + 纯文字设计，在确保能够为用户传达重要功能时又能保证简约干净，拉近了群友及路人的距离感。</p>
+<p><img src="/img/letdownloadhere.png" alt="封面设计"></p>
+<p>我们还注意到，有些用户特别重视网站标题与副标题，由于上代标题“X-IPA 下载站 - 提供高质量 IPA 下载服务”太过自信，严重拉大了路人缘。</p>
+<p>因此，我们从 GitHub 吸收标题与副标题灵感，以下载为本，重新以“Let’s Download IPA Here”为基准设计全新英文标题与副标题，也与 X-IPA 的简约高效融为一体。</p>
+<p>好啦，虽然发布之后这些更新也只是锦上添花，不过以新面貌展现给大家面前也不失为提升知名度的选择呢。</p>
+<blockquote>
+<p>X-IPA Studios © 2024，保留所有权利。</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知</title>
+    <url>/2024/07/26/public-test/</url>
+    <content><![CDATA[<p>即日起，新闻板块的 X-IPA Gitalk Review Service 服务开始 Alpha 公众测试。大家可以登录自己的 GitHub 账号在下载站新闻下方评论！</p>
+<p>（注：部分地区可能因为网络问题导致连接评论服务超时，换个网络重新试一下…毕竟 worker.dev 被别有用心之人滥用被墙之后就只能用国际 CDN 转发了…）</p>
+]]></content>
+  </entry>
+</search>
