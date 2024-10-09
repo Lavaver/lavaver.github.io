@@ -15,8 +15,6 @@
     <link rel="alternative" href="atom.xml" title="X-IPA Software" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-
     
     
     <meta name="twitter:card" content="summary"/>
@@ -75,8 +73,19 @@
          url('/Mojangles.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
-  }
 
+    font-family: 'hanyirunyuan';
+    src: url('/zh-cn_0.ttf') format('woff2'),
+         url('/zh-cn_0.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'yuanshen';
+    src: url('/zh-cn.ttf') format('woff2'),
+         url('/zh-cn.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
   body {
     font-family: 'mojangles', sans-serif;
   }
@@ -184,13 +193,26 @@
 }
 </style>
 
+<script>
+        function changeFont(event) {
+            var selectedFont = event.target.value; // 获取选中的字体
+            document.body.style.fontFamily = selectedFont; // 改变页面字体
+        }
+    </script>
+
 <div class="tips-card">
   <div class="tips-header">
     <span class="tips-title">Tips</span>
     <span class="close-btn">&times;</span>
   </div>
   <div class="tips-content">
-    所有网盘分享密码皆为 xmdmx ，可点击卡片按钮下载该版本或查看该版本详情页。如未越狱，你可以<a href="/Minecraft/How-to-Jailbreak-Your-iPhone">点击此处按照提示越狱</a>。OneDrive 下载链接你可尝试使用 OneDrive App 直接下载
+    所有网盘分享密码皆为 xmdmx ，可点击卡片按钮下载该版本或查看该版本详情页。如未越狱，你可以<a href="/Minecraft/How-to-Jailbreak-Your-iPhone">点击此处按照提示越狱</a>。OneDrive 下载链接你可尝试使用 OneDrive App 直接下载。<br/><br/>
+    该分区应用了风格字体。如需更换，请点击此下拉框，然后选取新字体：<br/><select id="fontSelect" onchange="changeFont(event)">
+        <option value="mojangles">默认（Mojangles）</option>
+        <option value="hanyirunyuan">站点默认（汉仪润园）</option>
+        <option value="yuanshen">原神（汉仪文黑）</option>
+    </select>
+    （若无变化，请尝试刷新此页面）
   </div>
 </div>
 
@@ -313,8 +335,6 @@ function playSound() {
 </div>
 
 </body>
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>

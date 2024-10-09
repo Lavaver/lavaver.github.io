@@ -15,8 +15,6 @@
     <link rel="alternative" href="atom.xml" title="X-IPA Software" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-
     
     
     <meta name="twitter:card" content="summary"/>
@@ -121,12 +119,37 @@
   </div>
   <div class="tips-content">
     捐款请量力而行，是自愿捐款。且未成年人捐款时应先征得家长同意。
-    若你想要为域名续费贡献一份力的话，别忘了使用支付宝捐款（域名在阿里云买的，阿里云只支持支付宝付款）。
+    若你想要为域名续费贡献一份力的话，别忘了使用支付宝捐款。<br/>
+    支付码将在你勾选复选框后显示。若没有效果，请尝试刷新页面。<br/>
+    <br/>
+    <input type="checkbox" onclick="toggleImage(this)"> 我已了解上述注意须知，并接受误捐款所导致的后果
   </div>
 </div>
 
-<img src="/images/Cache_6a40acfe85fdd7f3..jpg" alt="微信">
-<img src="/images/1718364627054.jpg" alt="支付宝">
+<style>
+  #wechatImage {
+    display: none; /* 默认隐藏图片 */
+  }
+  #alipayImage {
+    display: none; /* 默认隐藏图片 */
+  }
+</style>
+<script>
+  function toggleImage(checkbox) {
+    var image = document.getElementById("wechatImage");
+    var image1 = document.getElementById("alipayImage");
+    if (checkbox.checked) {
+      image.style.display = "block"; // 勾选后显示图片
+      image1.style.display = "block"; // 勾选后显示图片
+    } else {
+      image.style.display = "none"; // 取消勾选后隐藏图片
+      image1.style.display = "none"; // 取消勾选后隐藏图片
+    }
+  }
+</script>
+
+<img id="wechatImage" src="/images/Cache_6a40acfe85fdd7f3..jpg" alt="微信">
+<img id="alipayImage" src="/images/1718364627054.jpg" alt="支付宝">
 
 <h2 id="捐款名单（排名不分前后）"><a href="#捐款名单（排名不分前后）" class="headerlink" title="捐款名单（排名不分前后）"></a>捐款名单（排名不分前后）</h2><div class="tips-card">
   <div class="tips-header">
@@ -207,8 +230,6 @@
 </div>
 
 </body>
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>

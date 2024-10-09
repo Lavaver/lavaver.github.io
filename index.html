@@ -15,8 +15,6 @@
     <link rel="alternative" href="atom.xml" title="X-IPA Software" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-
     
     
     <meta name="twitter:card" content="summary"/>
@@ -44,14 +42,21 @@
     <div id="loader"></div>
     <style>
     @font-face {
-        font-family: 'Roboto';
-        src: url('/zh-cn_0.ttf') format('woff2');
+        font-family: 'oboto';
+        src: url('/zh-cn_0.ttf') format('woff2'),
+             url('/zh-cn_0.ttf') format('woff');
+        font-weight: normal;
+        font-style: normal;
+
+        font-family: 'yuanshen';
+        src: url('/zh-cn.ttf') format('woff2'),
+             url('/zh-cn.ttf') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     body {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'oboto', sans-serif;
     }
 </style>
 
@@ -94,7 +99,18 @@
 	<span class="target"></span>
 	
     <p id="copyright">
-        &copy; 2024 X-IPA.
+        &copy; 2024 X-IPA. 保留所有权利。 | 切换站点全局字体为：
+        <select id="fontSelect" onchange="changeFont(event)">
+            <option value="oboto">站点默认（汉仪润园）</option>
+            <option value="yuanshen">原神（汉仪文黑）</option>
+            <option value="Roboto">Google Roboto</option>
+        </select>
+        <script>
+            function changeFont(event) {
+               var selectedFont = event.target.value; // 获取选中的字体
+               document.body.style.fontFamily = selectedFont; // 改变页面字体
+           }
+        </script>
 		
     </p>
 </div>
@@ -122,9 +138,10 @@
     </div>
     
     <div id="post0">
-        <p>八月 27, 2024</p>
-        <h2><a href="/2024/08/27/genghuan-cover/" title="【视觉改变公告】X-IPA 新版网站 Cover 设计、网站标题及副标题现已上线！" class="posttitle">【视觉改变公告】X-IPA 新版网站 Cover 设计、网站标题及副标题现已上线！</a></h2>
-        <p class="summary">由于原先的封面图太过于复杂，且图片分辨率并非正常的 1920x1080 ，网站在访问时为了良好视觉体验导致封面图被...</p>
+        <p>十月 09, 2024</p>
+        <h2><a href="/2024/10/09/version-5/" title="【网站更新】X-IPA 下载站 V5 功能性更新" class="posttitle">【网站更新】X-IPA 下载站 V5 功能性更新</a></h2>
+        <p class="summary">站长在鸽了很久之后总算是鸽出了一个功能性小更新，快来跟小编一起看看吧（草）！
+话说站长为啥最近鸽那么久呢…？算了不...</p>
     </div>
     
 </div>
@@ -132,6 +149,20 @@
     <div id="primary">
         <h1 style="text-align: center; margin-top: 70px;">历史新闻</h1>
         
+<div class="post">
+    <a href="/2024/08/27/genghuan-cover/" title="【视觉改变公告】X-IPA 新版网站 Cover 设计、网站标题及副标题现已上线！">
+        <img src="/img/letdownloadhere.png" class="cover" width="680" height="440">
+    </a>
+    <div class="else">
+        <p>八月 27, 2024</p>
+        <h3><a href="/2024/08/27/genghuan-cover/" title="【视觉改变公告】X-IPA 新版网站 Cover 设计、网站标题及副标题现已上线！" class="posttitle">【视觉改变公告】X-IPA 新版网站 Cover 设计、网站标题及副标题现已上线！</a></h3>
+        <p>由于原先的封面图太过于复杂，且图片分辨率并非正常的 1920x1080 ，网站在访问时为了良好视觉体验导致封面图被拉伸，导致观感十分不好。
+
+而且原封面图...</p>
+    </div>
+</div>
+
+
 <div class="post">
     <a href="/2024/07/26/public-test/" title="【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知">
         <img src="/img/letdownloadhere.png" class="cover" width="680" height="440">
@@ -175,8 +206,6 @@
 
  
 </body>
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>

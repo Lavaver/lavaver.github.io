@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知</title>
+    <url>/2024/07/26/public-test/</url>
+    <content><![CDATA[<p>即日起，新闻板块的 X-IPA Gitalk Review Service 服务开始 Alpha 公众测试。大家可以登录自己的 GitHub 账号在下载站新闻下方评论！</p>
+<p>（注：部分地区可能因为网络问题导致连接评论服务超时，换个网络重新试一下…毕竟 worker.dev 被别有用心之人滥用被墙之后就只能用国际 CDN 转发了…）</p>
+]]></content>
+  </entry>
+  <entry>
     <title>【视觉改变公告】X-IPA 新版网站 Cover 设计、网站标题及副标题现已上线！</title>
     <url>/2024/08/27/genghuan-cover/</url>
     <content><![CDATA[<p>由于原先的封面图太<em>过于复杂</em>，且图片分辨率并非正常的 1920x1080 ，网站在访问时为了<em>良好视觉体验</em>导致封面图被拉伸，导致观感十分不好。</p>
@@ -18,10 +25,32 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知</title>
-    <url>/2024/07/26/public-test/</url>
-    <content><![CDATA[<p>即日起，新闻板块的 X-IPA Gitalk Review Service 服务开始 Alpha 公众测试。大家可以登录自己的 GitHub 账号在下载站新闻下方评论！</p>
-<p>（注：部分地区可能因为网络问题导致连接评论服务超时，换个网络重新试一下…毕竟 worker.dev 被别有用心之人滥用被墙之后就只能用国际 CDN 转发了…）</p>
+    <title>【网站更新】X-IPA 下载站 V5 功能性更新</title>
+    <url>/2024/10/09/version-5/</url>
+    <content><![CDATA[<p>站长在鸽了很久之后总算是鸽出了一个功能性小更新，快来跟小编一起看看吧（草）！</p>
+<p><em>话说站长为啥最近鸽那么久呢…？算了不该问的事就不问了</em></p>
+<h2 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h2><ul>
+<li>[+] 添加 全站字体切换功能</li>
+</ul>
+<p><img src="/images/pst/1.png" alt="字体切换"></p>
+<blockquote>
+<p>该功能<strong>会改变全站字体显示，并非单一页面</strong>（包含有特殊风格化字体的独立分区不会受到影响，除非<strong>这类风格化字体只适配了 ASCII 字符集中的字符</strong>）。</p>
+</blockquote>
+<ul>
+<li>[+] 添加 Minecraft 专区的独立字体切换功能</li>
+</ul>
+<blockquote>
+<p>该功能<strong>仅对这个专区页面生效</strong>。</p>
+</blockquote>
+<ul>
+<li><p>[&#x3D;] 修复了一些问题</p>
+</li>
+<li><p>[-] 因不可抗力，评论功能暂时关闭</p>
+</li>
+</ul>
+<blockquote>
+<p>恢复时间直至另行通知。</p>
+</blockquote>
 ]]></content>
   </entry>
 </search>
