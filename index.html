@@ -47,14 +47,24 @@
              url('/zh-cn_0.ttf') format('woff');
         font-weight: normal;
         font-style: normal;
+    }
 
-        font-family: 'yuanshen';
+    @font-face {
+        font-family: 'yuan';
         src: url('/zh-cn.ttf') format('woff2'),
              url('/zh-cn.ttf') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
+    @font-face {
+        font-family: 'SmileySansOblique';
+        src: url('/SmileySans-Oblique-2.ttf') format('woff2'),
+             url('/SmileySans-Oblique-2.ttf') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
         font-family: 'oboto', sans-serif;
     }
@@ -102,14 +112,19 @@
         &copy; 2024 X-IPA. 保留所有权利。 | 切换站点全局字体为：
         <select id="fontSelect" onchange="changeFont(event)">
             <option value="oboto">站点默认（汉仪润园）</option>
-            <option value="yuanshen">原神（汉仪文黑）</option>
+            <option value="yuan">原神（汉仪文黑）</option>
+            <option value="SmileySansOblique">得意黑（斜体）</option>
             <option value="Roboto">Google Roboto</option>
         </select>
         <script>
             function changeFont(event) {
                var selectedFont = event.target.value; // 获取选中的字体
                document.body.style.fontFamily = selectedFont; // 改变页面字体
+               // 检查选择的字体
+            if (selectedFont === "SmileySansOblique") {
+                alert("这个字体在本站的显示效果欠佳。如果你仍想要继续将此字体设为全局字体，请继续；如果想要切换回去，请先点击确认，然后在下拉框中选择一个新的字体。");
            }
+        }
         </script>
 		
     </p>
