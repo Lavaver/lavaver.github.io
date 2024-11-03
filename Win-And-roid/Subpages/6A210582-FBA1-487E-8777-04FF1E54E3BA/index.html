@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>X-IPA Software 下载站</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="IPA, 下载, 下载站, iPhone, iOS, Windows, Android,"> 
+    
+    <meta name="author" content="X-IPA Software"> 
+    <link rel="alternative" href="atom.xml" title="X-IPA Software 下载站" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="X-IPA Software 下载站"/>
+    
+    
+    
+    
+    
+    <meta property="og:site_name" content="X-IPA Software 下载站"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="X-IPA Software 下载站"/>
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">X-IPA Software 下载站</span>
+    <div id="loader"></div>
+    <style>
+    @font-face {
+        font-family: 'Roboto';
+        src: url('/zh-cn_0.ttf') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+
+<div id="single" class="page">
+    <div id="top">
+        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div class="main">
+                <div class="content">
+                
+                        <h1 id="为你的-Windows-10-11-设备安装-Windows-Subsystem-For-Android"><a href="#为你的-Windows-10-11-设备安装-Windows-Subsystem-For-Android" class="headerlink" title="为你的 Windows 10&#x2F;11 设备安装 Windows Subsystem For Android"></a>为你的 Windows 10&#x2F;11 设备安装 Windows Subsystem For Android</h1><p>本教程将指导你安装 Windows Subsystem For Android ，并帮助你快速上手。</p>
+<h2 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h2><ul>
+<li>你的电脑 CPU 支持虚拟化，且打开了 Hyper-V 。若你不知道如何打开 Hyper-V ，可<a href="##%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80%E8%99%9A%E6%8B%9F%E5%8C%96">点击此处跳转到相应部分</a></li>
+<li>知道一些基本的 ADB 命令（例如安装&#x2F;卸载应用程序等）。如果不知道也不要慌，你可以去搜索一些 ADB 工具箱来帮助你顺利调教好环境</li>
+<li>电脑必须安装了 Windows 10&#x2F;11 ，且 UWP 功能没有被阉割（即其他人封装的系统不能移除与 UWP 相关的功能）</li>
+<li>准备一个剩余空间 ≥64GiB 的磁盘（尽量使用 SSD）</li>
+<li>电脑内存至少准备 8G 及以上</li>
+</ul>
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><ol>
+<li>从下载服务中下载后缀名为 <code>.Msixbundle</code> 的软件包，并保存在熟知的路径</li>
+</ol>
+<p><img src="/Win-And-roid/Subpages/6A210582-FBA1-487E-8777-04FF1E54E3BA/screenshot/212435.png" alt="下载并另存到熟知的路径"></p>
+<ol start="2">
+<li>双击下载好的软件包，准备安装</li>
+</ol>
+<p><img src="/Win-And-roid/Subpages/6A210582-FBA1-487E-8777-04FF1E54E3BA/screenshot/212903.png" alt="双击软件包"></p>
+<ol start="3">
+<li>点按“安装”，并按照提示给予管理员权限后自动开始部署安装。这时候你可以坐和放宽，喝喝咖啡休息一下</li>
+</ol>
+<p><img src="/Win-And-roid/Subpages/6A210582-FBA1-487E-8777-04FF1E54E3BA/screenshot/213118.png" alt="安装界面"></p>
+<ol start="4">
+<li>如果看到了应用界面，那么就说明安装成功了！</li>
+</ol>
+<h2 id="如何打开虚拟化"><a href="#如何打开虚拟化" class="headerlink" title="如何打开虚拟化"></a>如何打开虚拟化</h2><blockquote>
+<p>你的设备安装的 Windows 版本必须至少为专业版及以上。家庭版或 S 模式不能打开</p>
+</blockquote>
+<ol>
+<li>在搜索栏搜索“控制面板”，并打开它</li>
+</ol>
+<p><img src="/Win-And-roid/Subpages/6A210582-FBA1-487E-8777-04FF1E54E3BA/screenshot/213820.png" alt="搜索“控制面板”"></p>
+<ol start="2">
+<li>单击“程序”类别，然后单击“启用或关闭 Windows 功能”</li>
+</ol>
+<p><img src="/Win-And-roid/Subpages/6A210582-FBA1-487E-8777-04FF1E54E3BA/screenshot/213958.png" alt="单击“程序”类别"></p>
+<p><img src="/Win-And-roid/Subpages/6A210582-FBA1-487E-8777-04FF1E54E3BA/screenshot/214209.png" alt="单击“启用或关闭 Windows 功能”"></p>
+<ol start="3">
+<li>在打开的新窗口中勾选 Hyper-V</li>
+</ol>
+<blockquote>
+<p>如果你的电脑 BIOS 没有直接的虚拟化开关，则你需要一并勾选“Windows 虚拟机监控程序平台”和“虚拟机平台”</p>
+</blockquote>
+<p><img src="/Win-And-roid/Subpages/6A210582-FBA1-487E-8777-04FF1E54E3BA/screenshot/214549.png" alt="勾选 Hyper-V"></p>
+<ol start="4">
+<li>单击“确定”，然后按要求指引重启整机即可开启 Hyper-V</li>
+</ol>
+<h2 id="使用-ADB-连接到-WSA"><a href="#使用-ADB-连接到-WSA" class="headerlink" title="使用 ADB 连接到 WSA"></a>使用 ADB 连接到 WSA</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip">从此处下载 ADB ，并解压到熟悉的路径</a></li>
+<li>在解压后地址栏输入 <code>cmd</code> ，进入命令提示符</li>
+<li>此时你应该确保 WSA 的开发者模式和 ADB 调试已开启。当你开启调试后，WSA 会显示一个内网 IP 和端口</li>
+<li>此时，你可以通过 <code>adb connect &lt;IP&gt;:&lt;Port&gt;</code> 命令来连接设备。如果一切顺利，你会看到 <code>connected to &lt;IP&gt;:&lt;Port&gt;</code> 字样</li>
+</ol>
+<h2 id="尝试使用-ADB-安装喜爱的应用程序"><a href="#尝试使用-ADB-安装喜爱的应用程序" class="headerlink" title="尝试使用 ADB 安装喜爱的应用程序"></a>尝试使用 ADB 安装喜爱的应用程序</h2><ol>
+<li>在 ADB 存储路径上方的地址栏输入 <code>cmd</code> ，进入命令提示符</li>
+<li>如果你未连接 WSA ，你可以按照上面的简易教程快速连接。如已连接，你可进行下一步</li>
+<li>在终端输入 <code>adb install &lt;软件路径&gt;</code> 并回车，ADB 会自动开始安装软件。当一切顺利时，你会在终端看到 <code>Success</code> 字样</li>
+</ol>
+
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
