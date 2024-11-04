@@ -215,20 +215,6 @@
             }
         });
     });
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        // 使用外部API获取用户的IP信息
-        fetch('https://ip-api.com/json/')
-            .then(response => response.json())
-            .then(data => {
-                // 检查用户的国家是否为中国
-                if (data.country === 'China') {
-                    log.warn('由于访问 IP 处于中国大陆境内，将软重定向至镜像站。');
-                    window.location.href = 'https://cn.x-ipa.online';
-                }
-            })
-            .catch(error => console.error('错误:', error));
-    });
 </script>
 
 
