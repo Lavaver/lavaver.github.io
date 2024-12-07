@@ -293,19 +293,46 @@
   background-color: #0056b3;
 }
 
+details {
+  background-color: #f9f9f9; /* 背景色 */
+  border: 1px solid #ccc; /* 边框样式 */
+  border-radius: 5px; /* 圆角效果 */
+  padding: 10px; /* 内边距 */
+  margin: 10px 0; /* 外边距 */
+  transition: background-color 0.3s; /* 背景色的过渡效果 */
+}
+
+details[open] {
+  background-color: #e9e9e9; /* 展开时的背景色 */
+}
+
+summary {
+  cursor: pointer; /* 鼠标悬停时显示为手形 */
+  font-weight: bold; /* 加粗字体 */
+  outline: none; /* 去掉默认的轮廓 */
+}
+
+summary:hover {
+  color: #007bff; /* 悬停时字体颜色变化 */
+}
+
 </style>
 
 <div class="tips-card">
   <div class="tips-header">
-    <span class="tips-title">Copyright Warn</span>
+    <span class="tips-title">Copyright Warn & Tips</span>
     <span class="close-btn">&times;</span>
   </div>
   <div class="tips-content">
     本站所引用的全部字体仅供非商业用途美化网页使用。<br/>
-    请注意：X-IPA Studios 不会对任何字体做任何版权声明。除非个别字体，否则字体来源均为官方。在使用这些字体进行商业用途时，请先向这些字体的创作者（或公司/团体）支付必须的版权费，并且你知晓（商业用途情况下）未经支付版权费的非法使用这些字体的风险。
+    请注意：X-IPA Studios 不会对任何字体做任何版权声明。除非个别字体，否则字体来源均为官方。在使用这些字体进行商业用途时，请先向这些字体的创作者（或公司/团体）支付必须的版权费，并且你知晓（商业用途情况下）未经支付版权费的非法使用这些字体的风险。<br/>
+    点击对应折叠卡片头即可查看对应字体分类。
   </div>
 </div>
 
+
+<details>
+<summary>纯 ASCII 字体</summary>
 <div class="font-card">
   <div class="font-preview">
     <span class="preview-text" style="font-family: 'mojangles'">AaBbCcDd</span>
@@ -316,6 +343,19 @@
   </div>
 </div>
 
+<div class="font-card">
+  <div class="font-preview">
+    <span class="preview-text" style="font-family: 'ubuntu'">Ubuntu</span>
+  </div>
+  <div class="font-info">
+    <h3 class="font-name">Ubuntu Regular</h3><p>开源字体</p>
+    <p class="font-description">Ubuntu 系统中默认的英文字体。</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>汉仪系列</summary>
 <div class="font-card">
   <div class="font-preview">
     <span class="preview-text" style="font-family: 'yuanshen'">一只敏捷的棕色狐狸跳过一只懒惰的狗</span>
@@ -335,6 +375,10 @@
     <p class="font-description">游戏《崩坏：星穹铁道》所使用的默认字体。包括了常见 CJK 字符集，也是本站第一首选字体。</p>
   </div>
 </div>
+</details>
+
+<details>
+<summary>开源系列</summary>
 
 <div class="font-card">
   <div class="font-preview">
@@ -348,16 +392,6 @@
 
 <div class="font-card">
   <div class="font-preview">
-    <span class="preview-text" style="font-family: 'ubuntu'">Ubuntu</span>
-  </div>
-  <div class="font-info">
-    <h3 class="font-name">Ubuntu Regular</h3><p>开源字体</p>
-    <p class="font-description">Ubuntu 系统中默认的英文字体。</p>
-  </div>
-</div>
-
-<div class="font-card">
-  <div class="font-preview">
     <span class="preview-text" style="font-family: 'noto-sans'">一只敏捷的棕色狐狸跳过一只懒惰的狗</span>
   </div>
   <div class="font-info">
@@ -365,6 +399,8 @@
     <p class="font-description">由 Google 与 Adobe 合作设计，在各个领域都广泛应用的开源字体。</p>
   </div>
 </div>
+
+</details>
                 
 
 

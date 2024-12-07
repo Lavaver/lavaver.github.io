@@ -153,6 +153,30 @@
   font-size: 14px;
   color: #555;
 }
+
+details {
+  background-color: #f9f9f9; /* 背景色 */
+  border: 1px solid #ccc; /* 边框样式 */
+  border-radius: 5px; /* 圆角效果 */
+  padding: 10px; /* 内边距 */
+  margin: 10px 0; /* 外边距 */
+  transition: background-color 0.3s; /* 背景色的过渡效果 */
+}
+
+details[open] {
+  background-color: #e9e9e9; /* 展开时的背景色 */
+}
+
+summary {
+  cursor: pointer; /* 鼠标悬停时显示为手形 */
+  font-weight: bold; /* 加粗字体 */
+  outline: none; /* 去掉默认的轮廓 */
+}
+
+summary:hover {
+  color: #007bff; /* 悬停时字体颜色变化 */
+}
+
 </style>
 
 <div class="tips-card">
@@ -162,6 +186,20 @@
   </div>
   <div class="tips-content">
     所有获取到的 IPA 不提供详细的安装说明，你可以网上冲浪寻找如何安装。OneDrive 下载链接你可尝试使用 OneDrive App 直接下载。部分链接可以通过网站小资源库直链下载
+  </div>
+</div>
+
+<details>
+<summary>已过时软件列表</summary>
+
+<div class="tips-card">
+  <div class="tips-header">
+    <span class="tips-title">注意</span>
+    <span class="close-btn">&times;</span>
+  </div>
+  <div class="tips-content">
+    此列表中如下 IPA 已有很久未进行更新或变动，且这些软件的部分内容可能已过时。<br/>
+    X-IPA Studios 仍会尽可能保留这些已过时软件的相关资源，以便随时下载。
   </div>
 </div>
 
@@ -219,6 +257,8 @@
     </a>
   </div>
 </div>
+
+</details>
                 
 
 
