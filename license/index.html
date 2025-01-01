@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>最终用户许可协议 | X-IPA Software 下载站</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.1.13"><!-- inject head--><link rel="canonical" href="https://x-ipa.online/license/"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="本 X-IPA Software 最终用户许可协议（下称“协议”）包含您访问和使用 X-IPA Software 以及您使用由我们或其合作伙伴向您提供的相关服务（下称“服务“）时所应遵守的条款及条件。协议自你接受之日起生效。您与 X-IPA Software 在下文中单独及时会被称作一方，一同被提及"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="X-IPA Software 下载站"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.1.13' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>let mdate = "7-7,9-18,12-13";
+mdate = (mdate.split(","));
+let ndate = new Date();
+for (let i of mdate) {
+    if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+        document.documentElement.classList.add('memorial');
+    }
+}
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2024-06-07 20:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        sayhello: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息",
+            goodnight: "晚安 😴",
+        },
+        sayhello2: ["Let's Download IPA Here!"],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: false,
+    is_page: true,
+    is_home: false,
+    page: '',
+    toc: false,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><canvas id="universe"></canvas><!-- background img--><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">新闻</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>游戏精选</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Minecraft"><i class="solitude  fas fa-gamepad"></i><span>Minecraft 专区</span></a></li><li><a class="site-page child" href="/GTA"><i class="solitude  fas fa-car"></i><span>GTA 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>移动端软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Non-Jailbreak"><i class="solitude  fas fa-unlock-alt"></i><span>免越狱软件</span></a></li><li><a class="site-page child" href="/Jailbreak"><i class="solitude  fas fa-lock"></i><span>越狱软件</span></a></li><li><a class="site-page child" href="/Android"><i class="solitude  fas fa-mobile-alt"></i><span>Android 软件</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>PC 软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Windows"><i class="solitude  fas fa-terminal"></i><span>Windows 专区</span></a></li><li><a class="site-page child" href="/Linux"><i class="solitude  fas fa-terminal"></i><span>Debian &amp; Flatpak 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>更多</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/see-also"><i class="solitude  fas fa-external-link"></i><span>另请参阅</span></a></li><li><a class="site-page child" href="/about"><i class="solitude  fas fa-info"></i><span>关于</span></a></li><li><a class="site-page child" href="/license"><i class="solitude  fas fa-info"></i><span>许可协议</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="回退到 Today"><span class="title">X-IPA Software</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">最终用户许可协议</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>游戏精选</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Minecraft"><i class="solitude  fas fa-gamepad"></i><span>Minecraft 专区</span></a></li><li><a class="site-page child" href="/GTA"><i class="solitude  fas fa-car"></i><span>GTA 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>移动端软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Non-Jailbreak"><i class="solitude  fas fa-unlock-alt"></i><span>免越狱软件</span></a></li><li><a class="site-page child" href="/Jailbreak"><i class="solitude  fas fa-lock"></i><span>越狱软件</span></a></li><li><a class="site-page child" href="/Android"><i class="solitude  fas fa-mobile-alt"></i><span>Android 软件</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>PC 软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Windows"><i class="solitude  fas fa-terminal"></i><span>Windows 专区</span></a></li><li><a class="site-page child" href="/Linux"><i class="solitude  fas fa-terminal"></i><span>Debian &amp; Flatpak 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>更多</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/see-also"><i class="solitude  fas fa-external-link"></i><span>另请参阅</span></a></li><li><a class="site-page child" href="/about"><i class="solitude  fas fa-info"></i><span>关于</span></a></li><li><a class="site-page child" href="/license"><i class="solitude  fas fa-info"></i><span>许可协议</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="article-container"><p>本 X-IPA Software 最终用户许可协议（下称“协议”）包含您访问和使用 X-IPA Software 以及您使用由我们或其合作伙伴向您提供的相关服务（下称“服务“）时所应遵守的条款及条件。协议自你接受之日起生效。您与 X-IPA Software 在下文中单独及时会被称作一方，一同被提及时会被称作双方。</p>
+<h1 id="1-服务的使用"><a href="#1-服务的使用" class="headerlink" title="1. 服务的使用"></a>1. 服务的使用</h1><h2 id="1-1-权利赠予"><a href="#1-1-权利赠予" class="headerlink" title="1.1 权利赠予"></a>1.1 权利赠予</h2><p>就您从我们的伙伴（下称“X-IPA 合作体”）处所订购或取得的服务，我们根据本协议条款及条件授予您非独家、不可转让、不可再许可和有限的许可。您应当遵守您和 X-IPA 合作体之间的任何协议、条款或条件。</p>
+<h2 id="1-2-许可使用"><a href="#1-2-许可使用" class="headerlink" title="1.2 许可使用"></a>1.2 许可使用</h2><ol>
+<li><p>您同意，您可以根据本协议条款及条件使用 X-IPA Software 提供的服务。</p>
+</li>
+<li><p>您同意，您不得以任何方式或理由对 X-IPA Software 提供的服务进行修改、出租、出借、出售、转让、许可、再许可、分发、复制、修改、翻译、创作衍生作品、传播、表演、展示、信息网络传播或其他方式进行利用。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何侵犯他人权利或违反任何法律、法规、条例或规定之行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何危害计算机网络安全、破坏网络或系统正常运行的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对互联网或移动网正常运转造成不利影响的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对其他用户或社会造成不利影响的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对 X-IPA Software 及其合作伙伴造成不利影响的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对第三方造成不利影响的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对您或他人造成不利影响的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对 X-IPA 合作体造成不利影响的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对您或他人造成不正当利益的行为。</p>
+</li>
+<li><p>您同意，您不得利用 X-IPA Software 提供的服务进行任何可能对 X-IPA 合作体造成不正当利益的行为。</p>
+</li>
+</ol>
+<h2 id="1-3-可接受的使用政策"><a href="#1-3-可接受的使用政策" class="headerlink" title="1.3 可接受的使用政策"></a>1.3 可接受的使用政策</h2><p>除本协议的条款外，您同意遵守 X-IPA Software 及其合作伙伴所制定的任何其他使用政策或规则。</p>
+<h2 id="1-4-您的软件"><a href="#1-4-您的软件" class="headerlink" title="1.4 您的软件"></a>1.4 您的软件</h2><p>除法律另有说明，您应该对您上传软件内容的合法性、准确性、完整性和可靠性负责。作为服务条款的一部分，您应负责获得并持续保有任何与您上传软件内容相关的通知、同意或授权。</p>
+<h2 id="1-5-您的内容"><a href="#1-5-您的内容" class="headerlink" title="1.5 您的内容"></a>1.5 您的内容</h2><p>您应确保您的内容不违反本协议的条款和条件并且符合法律法规。您应对您的内容合法性、准确性、完整性和可靠性负责。作为服务条款的一部分，您应负责获得并持续保有任何与您的内容相关的通知、同意或授权。除非法律另有明确规定，否则我们不承担与您的内容有关的义务与责任。</p>
+<h2 id="1-6-第三方内容"><a href="#1-6-第三方内容" class="headerlink" title="1.6 第三方内容"></a>1.6 第三方内容</h2><p>服务中可能包含或向您提供第三方内容。第三方内容可能受到本协议与文件中制定的单独条款和条件的约束（如适用）。第三方服务基于“现状”和“当前可用”而提供。我们部队任何第三方内容作出任何形式的陈述或保证，也不对任何第三方内容造成的任何性质或种类的损失、损害或责任承担任何责任。</p>
+<h1 id="2-安全和数据隐私"><a href="#2-安全和数据隐私" class="headerlink" title="2. 安全和数据隐私"></a>2. 安全和数据隐私</h1><h2 id="2-1-安全"><a href="#2-1-安全" class="headerlink" title="2.1 安全"></a>2.1 安全</h2><p>在不违反第1.5条和2.3要规定之义务的前提下，我们将采取适当的管理、物理和技术措施帮助您保护在服务环境下存储的您的内容的安全性和保密性。我们不会访问或者使用您的内容（除为遵守法律法规或政府机关的约束性命令），除非是为您提供必要的服务。</p>
+<h2 id="2-2-数据隐私"><a href="#2-2-数据隐私" class="headerlink" title="2.2 数据隐私"></a>2.2 数据隐私</h2><p>作为服务的一部分，为了保护您向我们提供的个人信息，我们遵守 X-IPA Software 隐私政策。您可以指定您的内容所存储的区域。未经您的同意，我们不会从您选择的区域中迁移您的内容，除非：（a）必须迁移以遵守适用的法律法规或者政府机关的约束性命令;（b）为了提供账单、管理、技术服务或者因调查安全事件或者调查违反本协议的行为。我们可能会在您使用服务的数据区域处理一些数据，我们也可能会在我们维护运营、支持和调查系统及团队的区域处理这些数据。我们将根据适用的法律法规和政府机关的要求，向您提供关于我们处理您的个人信息的详细信息。</p>
+<h2 id="2-3-您的安全"><a href="#2-3-您的安全" class="headerlink" title="2.3 您的安全"></a>2.3 您的安全</h2><p>在不违反上述2.1节的情况下，您应对任何安全漏洞以及由您的内容引起或与之相关的此类漏洞的后果负责，包括但不限于您的内容中包含的任何病毒、特洛伊木马、蠕虫或其他有害的编程程序。</p>
+<h1 id="3-声明与保证"><a href="#3-声明与保证" class="headerlink" title="3. 声明与保证"></a>3. 声明与保证</h1><h2 id="3-1-双方声明"><a href="#3-1-双方声明" class="headerlink" title="3.1 双方声明"></a>3.1 双方声明</h2><p>双方均声明其合法有效地签署了本协议，具有相应的权力和授权。</p>
+<h2 id="3-2-您的声明和保证"><a href="#3-2-您的声明和保证" class="headerlink" title="3.2 您的声明和保证"></a>3.2 您的声明和保证</h2><p>您声明、保证并承诺：（a）您应遵守与您在本协议项下的活动有关的所有适用法律和法规；（b）您在使用服务时应遵守相关法律法规的约束；（c）您对服务的使用不得侵犯任何第三方的知识产权或任何其他权利。</p>
+<h2 id="3-3-免责声明"><a href="#3-3-免责声明" class="headerlink" title="3.3 免责声明"></a>3.3 免责声明</h2><p><strong>我们不就下述行为进行保证：（a）服务将无错误或不会中断；（b）我们会修正与服务有关的所有缺陷或错误，或防止与本服务有关的所有第三方破坏或未经授权的访问；或（c）本服务将与您的内容或本公司未提供的任何其他硬件、软件、系统、服务或数据兼容。在法律允许的范围内,除非另有明文规定, 否则我们排除并明确拒绝任何保证、陈述、条款、条件或其他任何形式的承诺, 无论是明示的或默示的, 法定的或其他方式，包括但不限于任何针对适销性、质量满意度、非侵权性或特定用途适用性的保证、陈述、条款、条件或其他承诺。</strong></p>
+<h1 id="4-终止"><a href="#4-终止" class="headerlink" title="4. 终止"></a>4. 终止</h1><h2 id="4-1-终止"><a href="#4-1-终止" class="headerlink" title="4.1 终止"></a>4.1 终止</h2><ol>
+<li><p>您同意，X-IPA Software 有权在任何时候终止本协议，并无需事先通知您。</p>
+</li>
+<li><p>如您违反本协议的条款或条件，X-IPA Software 有权终止本协议，并无需事先通知您。</p>
+</li>
+<li><p>如您提供的服务被终止，X-IPA Software 有权保留并使用您的个人信息，以保障与您之间的协议，并有权在必要时向您追索相关款项。</p>
+</li>
+<li><p>如您需要终止本协议，您应当在三十日内书面通知 X-IPA Software。</p>
+</li>
+<li><p>如您未能及时书面通知 X-IPA Software 终止本协议，X-IPA Software 有权在终止前将您的个人信息用于本协议终止前的任何法律或合同目的。</p>
+</li>
+</ol>
+<h2 id="4-2-违约责任"><a href="#4-2-违约责任" class="headerlink" title="4.2 违约责任"></a>4.2 违约责任</h2><p>如您违反本协议的条款或条件，X-IPA Software 有权终止本协议，并有权追究您违约责任。</p>
+<h1 id="5-法律适用与管辖"><a href="#5-法律适用与管辖" class="headerlink" title="5. 法律适用与管辖"></a>5. 法律适用与管辖</h1></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 - 2025 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src="/img/pwa/favicon.ico">X-IPA Software</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="基于 Solitude 主题开发">基于 Solitude 主题开发</a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=2.1.13"></script><script src="/js/main.js?v=2.1.13"></script><script src="/js/third_party/waterfall.min.js?v=2.1.13"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/third_party/universe.min.js?v=2.1.13"></script><script>dark()
+</script><script src="/js/tw_cn.js?v=2.1.13"></script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><!-- Tianli-Talk--><!-- music--></body></html>
+        <script>
+            const posts = ["2024/12/08/version-6/","2024/11/28/version-5.3/","2024/11/09/version-5.2/","2024/11/08/version-5/","2024/11/08/public-test/","2024/11/08/cn-xipa/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>

@@ -1,365 +1,202 @@
-
-<!DOCTYPE html>
-<html lang="zh-CN" class="loading">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>X-IPA Software 下载站</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="IPA, 下载, 下载站, iPhone, iOS, Windows, Android,"> 
-    
-    <meta name="author" content="X-IPA Software"> 
-    <link rel="alternative" href="atom.xml" title="X-IPA Software 下载站" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    
-    
-    
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="X-IPA Software 下载站"/>
-    
-    
-    
-    
-    
-    <meta property="og:site_name" content="X-IPA Software 下载站"/>
-    <meta property="og:type" content="object"/>
-    <meta property="og:title" content="X-IPA Software 下载站"/>
-    
-    
-<link rel="stylesheet" href="/css/diaspora.css">
-
-    <script>window.searchDbPath = "/search.xml";</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body class="loading">
-    <span id="config-title" style="display:none">X-IPA Software 下载站</span>
-    <div id="loader"></div>
-    <style>
-    @font-face {
-        font-family: 'oboto';
-        src: url('/zh-cn_0.ttf') format('woff2'),
-             url('/zh-cn_0.ttf') format('woff');
-        font-weight: normal;
-        font-style: normal;
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>X-IPA Software 下载站</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.1.13"><!-- inject head--><link rel="canonical" href="https://x-ipa.online/"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="X-IPA Software 下载站"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.1.13' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>let mdate = "7-7,9-18,12-13";
+mdate = (mdate.split(","));
+let ndate = new Date();
+for (let i of mdate) {
+    if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+        document.documentElement.classList.add('memorial');
     }
+}
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
 
-    @font-face {
-        font-family: 'yuan';
-        src: url('/zh-cn.ttf') format('woff2'),
-             url('/zh-cn.ttf') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    @font-face {
-        font-family: 'SmileySansOblique';
-        src: url('/SmileySans-Oblique-2.ttf') format('woff2'),
-             url('/SmileySans-Oblique-2.ttf') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
 
-    @font-face {
-        font-family: 'noto-sans';
-        src: url('/NotoSans-Regular.ttf') format('woff2'),
-             url('/NotoSans-Regular.ttf') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
 
-    @font-face {
-        font-family: 'ubuntu';
-        src: url('/Ubuntu[wdth,wght].ttf') format('woff2'),
-             url('/Ubuntu[wdth,wght].ttf') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
 
-    body {
-        font-family: 'oboto', sans-serif;
-    }
-</style>
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
 
-<div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Minecraft/" title="Minecraft" target="_blank" rel="noopener">Minecraft</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/GTA/" title="GTA" target="_blank" rel="noopener">GTA</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Non-Jailbreak/" title="免越狱" target="_blank" rel="noopener">免越狱</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Jailbreak/" title="越狱" target="_blank" rel="noopener">越狱</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Win-And-roid/" title="Windows &amp; Android" target="_blank" rel="noopener">Windows &amp; Android</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Debian/" title="Debain &amp; Flatpak" target="_blank" rel="noopener">Debain &amp; Flatpak</a>
-        </li>
-        
-        <li class="pview menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/Sponsor/" title="赞助" target="_blank" rel="noopener">赞助</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://docs.x-ipa.online/" title="文档" target="_blank" rel="noopener">文档</a>
-        </li>
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://status.x-ipa.online/" title="站点状态" target="_blank" rel="noopener">站点状态</a>
-        </li>
-        
-    </ul>
-	<span class="target"></span>
-	
-    <p id="copyright">
-        &copy; 2024 X-IPA Software. 保留所有权利。 | 切换站点全局字体为：
-        <select id="fontSelect" onchange="changeFont(event)">
-            <option value="oboto">站点默认（汉仪润园）</option>
-            <option value="yuan">原神（汉仪文黑）</option>
-            <option value="SmileySansOblique">得意黑（斜体）</option>
-            <option value="noto-sans">思源黑体</option>
-            <option value="ubuntu">Ubuntu Regular</option>
-            <option value="Roboto">Google Roboto</option>
-        </select>
-        <br/> 对于本站引用的所有软件资源版权归原作者所有，软件的上传均由个人自行上传。X-IPA Studios 不接受因滥用任何软件资源而引起的任何法律纠纷，也不提供任何形式的担保。
-        <br/> 如上传的软件侵犯到您的合法权益，请联系<a href="mailto:support@x-ipa.online">官方客户支持邮箱</a>，我们将第一时间删除。
-        <script>
-            function changeFont(event) {
-               var selectedFont = event.target.value; // 获取选中的字体
-               document.body.style.fontFamily = selectedFont; // 改变页面字体
-               // 检查选择的字体
-            if (selectedFont === "SmileySansOblique") {
-                alert("这个字体在本站的显示效果欠佳。如果你仍想要继续将此字体设为全局字体，请继续；如果想要切换回去，请先点击确认，然后在下拉框中选择一个新的字体。");
-           }
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
         }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2024-06-07 20:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        sayhello: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息",
+            goodnight: "晚安 😴",
+        },
+        sayhello2: ["Let's Download IPA Here!"],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: false
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: false,
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: false,
+    is_page: false,
+    is_home: true,
+    page: 'solitude',
+    toc: false,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body" data-type="solitude"><!-- universe--><canvas id="universe"></canvas><!-- background img--><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">新闻</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>游戏精选</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Minecraft"><i class="solitude  fas fa-gamepad"></i><span>Minecraft 专区</span></a></li><li><a class="site-page child" href="/GTA"><i class="solitude  fas fa-car"></i><span>GTA 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>移动端软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Non-Jailbreak"><i class="solitude  fas fa-unlock-alt"></i><span>免越狱软件</span></a></li><li><a class="site-page child" href="/Jailbreak"><i class="solitude  fas fa-lock"></i><span>越狱软件</span></a></li><li><a class="site-page child" href="/Android"><i class="solitude  fas fa-mobile-alt"></i><span>Android 软件</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>PC 软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Windows"><i class="solitude  fas fa-terminal"></i><span>Windows 专区</span></a></li><li><a class="site-page child" href="/Linux"><i class="solitude  fas fa-terminal"></i><span>Debian &amp; Flatpak 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>更多</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/see-also"><i class="solitude  fas fa-external-link"></i><span>另请参阅</span></a></li><li><a class="site-page child" href="/about"><i class="solitude  fas fa-info"></i><span>关于</span></a></li><li><a class="site-page child" href="/license"><i class="solitude  fas fa-info"></i><span>许可协议</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="回退到 Today"><span class="title">X-IPA Software</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">X-IPA Software 下载站</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>游戏精选</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Minecraft"><i class="solitude  fas fa-gamepad"></i><span>Minecraft 专区</span></a></li><li><a class="site-page child" href="/GTA"><i class="solitude  fas fa-car"></i><span>GTA 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>移动端软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Non-Jailbreak"><i class="solitude  fas fa-unlock-alt"></i><span>免越狱软件</span></a></li><li><a class="site-page child" href="/Jailbreak"><i class="solitude  fas fa-lock"></i><span>越狱软件</span></a></li><li><a class="site-page child" href="/Android"><i class="solitude  fas fa-mobile-alt"></i><span>Android 软件</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>PC 软件</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/Windows"><i class="solitude  fas fa-terminal"></i><span>Windows 专区</span></a></li><li><a class="site-page child" href="/Linux"><i class="solitude  fas fa-terminal"></i><span>Debian &amp; Flatpak 专区</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>更多</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/see-also"><i class="solitude  fas fa-external-link"></i><span>另请参阅</span></a></li><li><a class="site-page child" href="/about"><i class="solitude  fas fa-info"></i><span>关于</span></a></li><li><a class="site-page child" href="/license"><i class="solitude  fas fa-info"></i><span>许可协议</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav></header><div id="home_top"><div class="recent-top-post-group" id="recent-top-post-group"><div class="recent-post-top" id="recent-post-top"><div id="bannerGroup"><div id="banners"><div class="banners-title"><div class="banners-title-big">X-IPA Software <br> 集结好软件</div><div class="banners-title-small"></div></div><div class="tags-group-all"><div class="tags-group-wrapper"><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/pwg1mxw4.png" title="UTM"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.remmina.Remmina.webp" title="Remmina"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.kde.kdenlive.webp" title="Kdenlive"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.gnome.Boxes.webp" title="GNOME-Boxes"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.gnome.TwentyFortyEight.webp" title="GNOME-TweentyFourtyEight"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.freecad.FreeCAD.webp" title="FreeCAD"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/OIP-C-ibooks.jpg" title="iBooks"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/WPS.jpg" title="WPS"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/pwg1mxw4.png" title="UTM"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.remmina.Remmina.webp" title="Remmina"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.kde.kdenlive.webp" title="Kdenlive"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.gnome.Boxes.webp" title="GNOME-Boxes"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.gnome.TwentyFortyEight.webp" title="GNOME-TweentyFourtyEight"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/flatpak/org.freecad.FreeCAD.webp" title="FreeCAD"></div></div><div class="tags-group-icon-pair"><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/OIP-C-ibooks.jpg" title="iBooks"></div><div class="tags-group-icon" style="background: undefined"><img class="nolazyload" src="/images/WPS.jpg" title="WPS"></div></div></div></div></div></div><div class="topGroup"><div class="todayCard" id="todayCard" onclick="pjax.loadUrl('/earth2025')"><div class="todayCard-info"><div class="todayCard-tips">时下热点</div><div class="todayCard-title">Earth Online 2025 正式发售！累计销量超 82 亿份！</div></div><div class="todayCard-cover nolazyload" style="background: url('/OIP-C.jpeg') no-repeat center /cover"></div></div></div></div></div></div><main class="layout" id="content-inner"><div id="home"><div id="category-bar"><div class="category-bar-items home" id="category-bar-items"><div class="category-bar-item select" id="category-bar-home"><a href="/">推荐</a></div><div class="category-bar-item"><a href="/archives/">全部新闻</a></div></div><div class="category-bar-right"><a class="category-bar-more" href="/categories/">更多</a></div></div><div class="recent-posts" id="recent-posts"><div class="recent-post-item" onclick="pjax.loadUrl('/2024/12/08/version-6/')"><div class="post_cover"><a href="/2024/12/08/version-6/" title="【网站更新】X-IPA Software 主站 v6 | 新软件速报（第一弹）"><img class="post_bg" src="/images/pst/letdownloadhere.png" alt="【网站更新】X-IPA Software 主站 v6 | 新软件速报（第一弹）"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="original">最新</span><a class="unvisited-post" href="/2024/12/08/version-6/">未读</a></div><a class="article-title" href="/2024/12/08/version-6/" title="【网站更新】X-IPA Software 主站 v6 | 新软件速报（第一弹）">【网站更新】X-IPA Software 主站 v6 | 新软件速报（第一弹）</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2024-12-08T12:13:37.236Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/11/28/version-5.3/')"><div class="post_cover"><a href="/2024/11/28/version-5.3/" title="【网站更新】X-IPA Software 主站 v5.3 | 用户体验更新"><img class="post_bg" src="/images/pst/letdownloadhere.png" alt="【网站更新】X-IPA Software 主站 v5.3 | 用户体验更新"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/2024/11/28/version-5.3/">未读</a></div><a class="article-title" href="/2024/11/28/version-5.3/" title="【网站更新】X-IPA Software 主站 v5.3 | 用户体验更新">【网站更新】X-IPA Software 主站 v5.3 | 用户体验更新</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2024-11-28T02:18:31.849Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/11/09/version-5.2/')"><div class="post_cover"><a href="/2024/11/09/version-5.2/" title="【网站更新】X-IPA Software 主站 v5.2 | 用户体验更新"><img class="post_bg" src="/images/pst/letdownloadhere.png" alt="【网站更新】X-IPA Software 主站 v5.2 | 用户体验更新"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/2024/11/09/version-5.2/">未读</a></div><a class="article-title" href="/2024/11/09/version-5.2/" title="【网站更新】X-IPA Software 主站 v5.2 | 用户体验更新">【网站更新】X-IPA Software 主站 v5.2 | 用户体验更新</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2024-11-09T15:38:18.661Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/11/08/version-5/')"><div class="post_cover"><a href="/2024/11/08/version-5/" title="【网站更新】X-IPA 下载站 V5 功能性更新"><img class="post_bg" src="/images/pst/letdownloadhere.png" alt="【网站更新】X-IPA 下载站 V5 功能性更新"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/2024/11/08/version-5/">未读</a></div><a class="article-title" href="/2024/11/08/version-5/" title="【网站更新】X-IPA 下载站 V5 功能性更新">【网站更新】X-IPA 下载站 V5 功能性更新</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2024-11-08T12:54:31.343Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/11/08/public-test/')"><div class="post_cover"><a href="/2024/11/08/public-test/" title="【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知"><img class="post_bg" src="/images/pst/letdownloadhere.png" alt="【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/2024/11/08/public-test/">未读</a></div><a class="article-title" href="/2024/11/08/public-test/" title="【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知">【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2024-11-08T12:54:31.331Z"></time></span></div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/2024/11/08/cn-xipa/')"><div class="post_cover"><a href="/2024/11/08/cn-xipa/" title="【通知】X-IPA Mainland China Mirror 开始试运营啦！"><img class="post_bg" src="/images/pst/letdownloadhere.png" alt="【通知】X-IPA Mainland China Mirror 开始试运营啦！"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/2024/11/08/cn-xipa/">未读</a></div><a class="article-title" href="/2024/11/08/cn-xipa/" title="【通知】X-IPA Mainland China Mirror 开始试运营啦！">【通知】X-IPA Mainland China Mirror 开始试运营啦！</a></div><div class="article-meta-wrap"><span class="article-meta tags"></span><span class="post-meta-date"><time datetime="2024-11-08T12:54:31.325Z"></time></span></div></div></div><!-- pagination--><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" title="跳转到指定页面" onkeyup="if (this.value === '0') this.value = ''"><a id="toPageButton" onclick="sco.toPage()"><i class="solitude fa-solid fa-angles-right"></i></a></div></div></nav></div></div><!-- aside--><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-bg-top"><div class="is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div></div><a class="card-info-avatar" href="/about/" title="头像"><div class="avatar-img"><img src="/images/favicon.png" alt="头像"></div></a><div class="card-info__desc_group"><div class="author-info__name">X-IPA Software</div><div class="author-info__desc"></div><div class="card-info__data is-center"><a href="/archives/" title="累计新闻数:6"><div class="length-num">6</div><div class="headline">新闻</div></a><a href="/tags/" title="标签总数:0"><div class="length-num">0</div><div class="headline">标签</div></a><a href="/categories/" title="分类总数:0"><div class="length-num">0</div><div class="headline">分类</div></a></div><div class="card-info-social-icons is-center"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon fa-solid fa-folder-closed"></i><div class="item-name">新闻总数 :</div></div><div class="item-count">6</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-calendar-day"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-arrows-rotate"></i><div class="item-name">最后更新 :</div></div><time class="item-count" datetime="2025-01-01T13:45:36.135Z"></time></div></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 - 2025 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src="/img/pwa/favicon.ico">X-IPA Software</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="基于 Solitude 主题开发">基于 Solitude 主题开发</a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=2.1.13"></script><script src="/js/main.js?v=2.1.13"></script><script src="/js/third_party/waterfall.min.js?v=2.1.13"></script><script src="https://fastly.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/third_party/universe.min.js?v=2.1.13"></script><script>dark()
+</script><script src="/js/tw_cn.js?v=2.1.13"></script><script src="https://fastly.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><!-- Tianli-Talk--><!-- music--></body></html>
+        <script>
+            const posts = ["2024/12/08/version-6/","2024/11/28/version-5.3/","2024/11/09/version-5.2/","2024/11/08/version-5/","2024/11/08/public-test/","2024/11/08/cn-xipa/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
         </script>
-		
-    </p>
-</div>
-
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/letdownloadhere.png" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewbox="0 0 2880 1620" height="100%" preserveaspectratio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
-        <div>
-            <a class="image-logo" href="/"></a>
-			
-            <div class="iconfont icon-menu switchmenu"></div>
-        </div>
-    </div>
-    
-    <div id="post0">
-        <p>十二月 08, 2024</p>
-        <h2><a href="/2024/12/08/version-6/" title="【网站更新】X-IPA Software 主站 v6 | 新软件速报（第一弹）" class="posttitle">【网站更新】X-IPA Software 主站 v6 | 新软件速报（第一弹）</a></h2>
-        <p class="summary">各位 X-IPA 软件用户，X-IPA Software 主站 v6 现已上线！
-X-IPA Software 主...</p>
-    </div>
-    
-</div>
-
-    <div id="primary">
-        <h1 style="text-align: center; margin-top: 70px;">历史新闻</h1>
-        
-<div class="post">
-    <a href="/2024/11/28/version-5.3/" title="【网站更新】X-IPA Software 主站 v5.3 | 用户体验更新">
-        <img src="/img/letdownloadhere.png" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十一月 28, 2024</p>
-        <h3><a href="/2024/11/28/version-5.3/" title="【网站更新】X-IPA Software 主站 v5.3 | 用户体验更新" class="posttitle">【网站更新】X-IPA Software 主站 v5.3 | 用户体验更新</a></h3>
-        <p>本次 X-IPA Software 主站更新了如下内容：
-[+] 新增 2 个可选字体
-Ubuntu Regular
-思源黑体
-
-
-
-X-IPA Stud...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2024/11/09/version-5.2/" title="【网站更新】X-IPA Software 主站 v5.2 | 用户体验更新">
-        <img src="/img/letdownloadhere.png" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十一月 09, 2024</p>
-        <h3><a href="/2024/11/09/version-5.2/" title="【网站更新】X-IPA Software 主站 v5.2 | 用户体验更新" class="posttitle">【网站更新】X-IPA Software 主站 v5.2 | 用户体验更新</a></h3>
-        <p>本次 X-IPA Software 主站更新了如下内容：
-[+] 新增安装包扩展名展示
-你可以在下载某个软件安装包之前就可以看到该分区预期的安装包扩展名标...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2024/11/08/version-5/" title="【网站更新】X-IPA 下载站 V5 功能性更新">
-        <img src="/img/letdownloadhere.png" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十一月 08, 2024</p>
-        <h3><a href="/2024/11/08/version-5/" title="【网站更新】X-IPA 下载站 V5 功能性更新" class="posttitle">【网站更新】X-IPA 下载站 V5 功能性更新</a></h3>
-        <p>站长在鸽了很久之后总算是鸽出了一个功能性小更新，快来跟小编一起看看吧（草）！
-话说站长为啥最近鸽那么久呢…？算了不该问的事就不问了
-更新内容
-[+] 添加...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2024/11/08/public-test/" title="【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知">
-        <img src="/img/letdownloadhere.png" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十一月 08, 2024</p>
-        <h3><a href="/2024/11/08/public-test/" title="【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知" class="posttitle">【网站功能开放】X-IPA Gitalk Review Service 开始 Alpha 公众测试的通知</a></h3>
-        <p>即日起，新闻板块的 X-IPA Gitalk Review Service 服务开始 Alpha 公众测试。大家可以登录自己的 GitHub 账号在下载站...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2024/11/08/cn-xipa/" title="【通知】X-IPA Mainland China Mirror 开始试运营啦！">
-        <img src="/img/letdownloadhere.png" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>十一月 08, 2024</p>
-        <h3><a href="/2024/11/08/cn-xipa/" title="【通知】X-IPA Mainland China Mirror 开始试运营啦！" class="posttitle">【通知】X-IPA Mainland China Mirror 开始试运营啦！</a></h3>
-        <p>为保证中国大陆的 X-IPA 支持者能够流畅地访问主站，我们现开通 X-IPA MainSite 的中国大陆镜像服务器。
-从现在起，你只需要访问 X-IP...</p>
-    </div>
-</div>
-
-
-    </div>
-    
-</div>
-<div id="preview"></div>
-
-
-<script>
-    var pressedKeys = ''; // 记录按键顺序的字符串
-
-    document.addEventListener('DOMContentLoaded', function() {
-        document.addEventListener('keydown', function(event) {
-            var key = event.key.toLowerCase(); // 获取按下的键并转换为小写
-            pressedKeys += key; // 将按下的键加入字符串
-    
-            // 只保留最近按下的5个键，超过5个时移除最早按下的键
-            if (pressedKeys.length > 4) {
-                pressedKeys = pressedKeys.substring(1);
-            }
-    
-            // 判断是否按下了 'pong' 这个组合
-            if (pressedKeys === 'pong') {
-                window.location.href = '/Pong';
-            }
-        });
-    });
-</script>
-
-
-
-
- 
-</body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-</html>
