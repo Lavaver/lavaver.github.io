@@ -4363,16 +4363,20 @@ span.tags-punctuation i {
   line-height: 1;
   color: var(--efu-card-bg);
 }
-#nav #site-name span.title {
-  letter-spacing: normal;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 0 5px;
-  line-height: 2rem;
+#nav #site-name i {
+  font-size: 16px;
+  line-height: 35px;
+  padding: 0 12px;
 }
 @media screen and (max-width: 768px) {
-  #nav #site-name span.title {
-    padding-left: 8px;
+  #nav #site-name i {
+    transition: 0.1s;
+  }
+}
+@media screen and (min-width: 900px) {
+  #nav #site-name i {
+    opacity: 1;
+    transition: all 0.3s, color 0s, opacity 0.3s;
   }
 }
 #nav #blog_name {
@@ -4760,6 +4764,11 @@ span.tags-punctuation i {
     position: absolute;
     overflow: hidden;
     left: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  #nav-console {
+    display: none;
   }
 }
 span.tags-punctuation {
